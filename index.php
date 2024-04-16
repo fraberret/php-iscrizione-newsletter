@@ -3,7 +3,9 @@
 var_dump($_GET);
 $email=$_GET['email'];
 
-var_dump(str_contains($email, "@") ,  str_contains($email, "."));
+if (isset($email)) {
+
+  var_dump(str_contains($email, "@") ,  str_contains($email, "."));
 
 if (str_contains($email, "@") &&  str_contains($email, ".")) {
 
@@ -11,8 +13,21 @@ if (str_contains($email, "@") &&  str_contains($email, ".")) {
     
 }else{
     $message='fail';
-}
+};
 
+$message=checkEmail($email);
+};
+
+function checkEmail ($mail)
+{
+    if (str_contains($mail, "@") &&  str_contains($mail, ".")) {
+
+        return'Ti sei iscritto correttamente!';
+        
+    }else{
+        return'Email non corretta';
+    };
+}
 
 
 ?>
@@ -59,10 +74,11 @@ if (str_contains($email, "@") &&  str_contains($email, ".")) {
         <main>
         
         <?php if (isset($message)) :?>
-         class="alert alert-primary"
-         role="alert"
-     >
-         <strong>Alert Heading</strong> <?= $message?>
+         
+         <div class="alert alert-primary"
+         role="alert"> 
+     
+         <strong><?= $message?></strong> 
      </div>
         
      <?php endif ?>

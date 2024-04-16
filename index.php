@@ -7,13 +7,6 @@ if (isset($email)) {
 
   var_dump(str_contains($email, "@") ,  str_contains($email, "."));
 
-if (str_contains($email, "@") &&  str_contains($email, ".")) {
-
-    $message='Ciao';
-    
-}else{
-    $message='fail';
-};
 
 $message=checkEmail($email);
 };

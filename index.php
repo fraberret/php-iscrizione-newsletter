@@ -1,6 +1,12 @@
 <?php
 
-var_dump($_GET)
+var_dump($_GET);
+$email=$_GET['email'];
+
+if (isset($email)) {
+    var_dump(str_contains($email, "@") ,  str_contains($email, "."));
+}
+
 
 
 ?>

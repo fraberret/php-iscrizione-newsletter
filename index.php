@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/helpers/functions.php';
+
 var_dump($_GET);
 $email=$_GET['email'];
 
@@ -10,18 +12,6 @@ if (isset($email)) {
 
 $message=checkEmail($email);
 };
-
-function checkEmail ($mail)
-{
-    if (str_contains($mail, "@") &&  str_contains($mail, ".")) {
-
-        return'Ti sei iscritto correttamente!';
-        
-    }else{
-        return'Email non corretta';
-    };
-}
-
 
 ?>
 

@@ -3,8 +3,14 @@
 var_dump($_GET);
 $email=$_GET['email'];
 
-if (isset($email)) {
-    var_dump(str_contains($email, "@") ,  str_contains($email, "."));
+var_dump(str_contains($email, "@") ,  str_contains($email, "."));
+
+if (str_contains($email, "@") &&  str_contains($email, ".")) {
+
+    $message='Ciao';
+    
+}else{
+    $message='fail';
 }
 
 
@@ -51,6 +57,18 @@ if (isset($email)) {
                 </nav>
         </header>
         <main>
+        
+        <?php if (isset($message)) :?>
+         class="alert alert-primary"
+         role="alert"
+     >
+         <strong>Alert Heading</strong> <?= $message?>
+     </div>
+        
+     <?php endif ?>
+        
+       
+            
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Custom jumbotron</h1>

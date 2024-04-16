@@ -1,3 +1,13 @@
+<?php
+
+var_dump($_GET)
+
+
+?>
+
+
+
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -52,12 +62,12 @@
         </main>
         <footer class=" py-5 bg-dark text-white">
       <div class="container text-center">      
-        <form>
+        <form method="GET">
             <h1>Newsletter</h1>
  
  <div class="mb-3 gap-2 d-flex justify-content-center">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control w-25" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input  type="email" class="form-control w-25" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
  </div>
